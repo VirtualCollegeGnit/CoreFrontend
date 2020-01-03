@@ -124,6 +124,12 @@ export default {
     return {
       leftDrawerOpen: false
     };
+  },
+  created() {
+    if (this.$oidc.isAuthenticated) {
+      this.$axios.defaults.headers.common["Authorization"] =
+        "Bearer " + this.$oidc.accessToken;
+    }
   }
 };
 </script>

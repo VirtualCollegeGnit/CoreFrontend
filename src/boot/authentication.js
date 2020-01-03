@@ -9,7 +9,7 @@ export default async ({ Vue, router }) => {
     authority: "http://localhost:5000",
     client_id: "spa",
     response_type: "id_token token",
-    scope: "openid profile",
+    scope: "openid profile api1",
     redirect_uri: "http://localhost:8080/index.html",
     loadUserInfo: true,
     revokeAccessTokenOnSignout: true

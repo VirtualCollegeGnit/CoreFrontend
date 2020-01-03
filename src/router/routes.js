@@ -11,6 +11,16 @@ const routes = [
     meta: {
       authName: "main"
     }
+  },
+  {
+    path: "/NewUser",
+    component: () => import("layouts/MyLayout.vue"),
+    children: [
+      { path: "", component: () => import("pages/Admin/NewUser.vue") }
+    ],
+    meta: {
+      authName: "main"
+    }
   }
 ];
 
