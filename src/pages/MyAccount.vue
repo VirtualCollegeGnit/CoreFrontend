@@ -5,12 +5,12 @@
     <div>
       {{ $oidc.accessToken || "" }}
     </div>
-    <jsonResult :data="response" />
+    <jsonResult v-for="(res, i) in response" :data="res" :key="i" />
     <q-btn label="Test Secure Api" @click="testSecureApi" />
     <q-btn label="Log" @click="oidcLog" />
     <q-btn label="Logout" @click="oidcLogout" />
     <q-btn
-      v-if="($oidc.userProfile.role = 'administrator')"
+      v-if="$oidc.userProfile.role === 'administrator'"
       label="New (Member) User"
       to="/NewUser"
     />

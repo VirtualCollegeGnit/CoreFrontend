@@ -8,10 +8,10 @@ export default async ({ Vue, router }) => {
     ? "http://localhost:8080"
     : "https://virtualcollege.now.sh";
   let mainOidc = createOidcAuth("main", SignInType.Window, appUrl, {
-    // authority: process.env.DEV
-    //   ? "http://localhost:5000"
-    //   : "https://virtualcollege-identity.herokuapp.com",
-    authority: "https://virtualcollege-identity.herokuapp.com",
+    authority: process.env.DEV
+      ? "http://localhost:5000"
+      : "https://virtualcollege-identity.herokuapp.com",
+    // authority: "https://virtualcollege-identity.herokuapp.com",
     client_id: process.env.DEV ? "spa" : "spa-prod",
     response_type: "id_token token",
     scope: "openid profile api1",
