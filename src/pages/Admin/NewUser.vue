@@ -101,13 +101,15 @@ export default {
           message: "You need to accept the license and terms first"
         });
       } else {
+        const dob = new Date(this.dateOfBirth);
+        dob.setMinutes(dob.getMinutes() - dob.getTimezoneOffset());
         const user = {
           firstName: this.firstName,
           middleName: this.middleName,
           lastName: this.lastName,
           mobile: this.mobile,
           email: this.email,
-          dateOfBirth: new Date(this.dateOfBirth).toJSON(),
+          dateOfBirth: dob.toJSON(),
           gender: Number.parseInt(this.gender)
         };
 
