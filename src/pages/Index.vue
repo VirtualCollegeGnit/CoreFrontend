@@ -11,12 +11,14 @@
           text-color="white"
           label="Login"
           size="lg"
+          to="MyAccount"
           v-if="!$oidc.isAuthenticated"
         />
         <q-btn
           color="blue"
           label="My Account"
           size="lg"
+          to="MyAccount"
           v-if="$oidc.isAuthenticated"
         />
       </div>
