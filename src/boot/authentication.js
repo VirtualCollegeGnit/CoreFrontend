@@ -14,7 +14,7 @@ export default async ({ Vue, router }) => {
     // authority: "https://virtualcollege-identity.herokuapp.com",
     client_id: process.env.DEV ? "spa" : "spa-prod",
     response_type: "id_token token",
-    scope: "openid profile api1",
+    scope: "openid profile basic_person_read basic_person_write",
     redirect_uri: `${appUrl}/index.html`,
     loadUserInfo: true,
     revokeAccessTokenOnSignout: true
