@@ -10,7 +10,7 @@
     <q-btn label="Log" @click="oidcLog" />
     <q-btn label="Logout" @click="oidcLogout" />
     <q-btn
-      v-if="$oidc.userProfile.role === 'administrator'"
+      v-if="$oidc.userProfile.role === 'admin'"
       label="New (Member) User"
       to="/NewUser"
     />
